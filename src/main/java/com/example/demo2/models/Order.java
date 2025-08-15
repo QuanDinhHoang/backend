@@ -3,6 +3,7 @@ package com.example.demo2.models;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.Date;
@@ -23,6 +24,10 @@ public class Order {
     @ManyToOne
     @JoinColumn(name = "user_id")
     private User user;
+
+    @ManyToOne
+    @JoinColumn(name = "voucher_id")
+    private Voucher voucher;
 
     @Column(name = "fullname" , length = 100) // ten full name o nguoi dat hang co the giong hoac khac so voi ten nhap vao o user
     private String fullName;
@@ -48,6 +53,12 @@ public class Order {
     @Column(name = "total_money")
     private Float totalMoney;
 
+    @Column(name = "discount_amount", precision = 10, scale = 2)
+    private BigDecimal discountAmount;
+
+    @Column(name = "final_amount", precision = 10, scale = 2)
+    private BigDecimal finalAmount;
+
     @Column(name = "shipping_method")
     private String shippingMethod;
 
@@ -62,6 +73,7 @@ public class Order {
 
     @Column(name = "payment_method")
     private String paymentMethod;
+
 
     @Column(name = "active")
     private Boolean active; // thuộc về admin

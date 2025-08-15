@@ -8,7 +8,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 //Optional<User> findById(Long id);
 //List<User> findAll();
 //void deleteById(Long id);
-//boolean existsById(Long id);
+//boolean existsById(Long id);boolean existsById(Long id);
 //long count();
 public interface CategoryReposity extends JpaRepository<Category, Long> {
 

@@ -113,3 +113,24 @@ USE shopapp;
 --    total_money FLOAT CHECK(total_money >= 0),
 --    color VARCHAR(20) DEFAULT ''
 -- );
+
+-- Thêm trường voucher_id vào bảng orders để liên kết với voucher
+-- ALTER TABLE orders ADD COLUMN voucher_id INT;
+-- ALTER TABLE orders ADD FOREIGN KEY (voucher_id) REFERENCES vouchers(id);
+
+-- 1. Tạo bảng brands
+CREATE TABLE brands (
+    id BIGINT NOT NULL AUTO_INCREMENT,
+    brand_img VARCHAR(500) DEFAULT NULL,
+    active BIT(1) NOT NULL,
+    name VARCHAR(100) NOT NULL,
+    PRIMARY KEY (id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+
+-- 2. Thêm brand_id vào products
+-- ALTER TABLE products
+-- ADD COLUMN brand_id BIGINT,
+-- ADD CONSTRAINT fk_products_brands
+--    FOREIGN KEY (brand_id) REFERENCES brands(id);
+

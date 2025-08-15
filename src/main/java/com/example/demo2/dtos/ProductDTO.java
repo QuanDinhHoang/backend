@@ -37,4 +37,7 @@ public class ProductDTO {
 
     //Bay gio thi truyen vao nhieu file anh
     //private List<MultipartFile> files;
+
+    @JsonProperty("brand_id") // neu ta muon su dung ten ta tu dat ma no ko giong voi thuoc tinh trong table thi phai su dung @JsonProperty, neu giong nhau thi ko su dung
+    private Long brandId;
 }

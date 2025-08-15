@@ -149,7 +149,6 @@ public class ProductController {
 
     }
 
-
     //luu tru file da upload len tren json
     private String storeFile(MultipartFile file) throws IOException {
         if (!isImageFile(file) || file.getOriginalFilename() == null) {
